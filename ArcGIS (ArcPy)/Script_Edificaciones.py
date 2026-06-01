@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # ---------------------------------------------------------------------------
-# Script.py
-# Fecha: 
+# Script_Edificaciones.py
 # Fecha Edicion: 28/02/2022
-# Descripcion: con/struye edificaciones
+# Version: 1.0
+# Descripcion: construye edificaciones
 # Owner: Raster4
 # ---------------------------------------------------------------------------
 
