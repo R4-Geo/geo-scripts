@@ -1,6 +1,6 @@
-# ─────────────────────────────────────────────
-# Datos pesados / binarios (no versionar en GitHub)
-# ─────────────────────────────────────────────
+# ==================
+# Datos pesados / binarios
+# ==================
 *.las
 *.laz
 *.tif
@@ -17,7 +17,7 @@
 LOG_Vuelos_*/
 **/LOG_Vuelos_*
 
-# Datos geoespaciales (rásters, imágenes y vectores) — no son código
+# Datos geoespaciales (rásters, imágenes y vectores) - no son código
 *.ecw
 *.eww
 *.jp2
@@ -32,12 +32,9 @@ LOG_Vuelos_*/
 *.qix
 *.qmd
 
-# Configuración local de Claude Code
-.claude/
-
-# ─────────────────────────────────────────────
+# ==================
 # Caché y entornos
-# ─────────────────────────────────────────────
+# ==================
 __pycache__/
 *.pyc
 *.pyo
