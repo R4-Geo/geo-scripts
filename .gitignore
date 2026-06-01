@@ -1,0 +1,53 @@
+# ─────────────────────────────────────────────
+# Datos pesados / binarios (no versionar en GitHub)
+# ─────────────────────────────────────────────
+*.las
+*.laz
+*.tif
+*.tiff
+*.rar
+*.zip
+*.7z
+
+# Geodatabases de Esri (datos, no código)
+*.gdb/
+*.gdb.zip
+
+# Logs de vuelo / capturas
+LOG_Vuelos_*/
+**/LOG_Vuelos_*
+
+# Datos geoespaciales (rásters, imágenes y vectores) — no son código
+*.ecw
+*.eww
+*.jp2
+*.gmg
+*.kml
+*.kmz
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.qix
+*.qmd
+
+# Configuración local de Claude Code
+.claude/
+
+# ─────────────────────────────────────────────
+# Caché y entornos
+# ─────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.idea/
+.vscode/
+.venv/
+env/
+venv/
+
+# Sistema
+Thumbs.db
+Desktop.ini
+.DS_Store
