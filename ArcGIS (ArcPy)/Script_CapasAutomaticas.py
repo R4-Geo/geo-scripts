@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # ---------------------------------------------------------------------------
-# Script.py
-# Fecha: 14/07/2021
+# Script_CapasAutomaticas.py
 # Fecha Edicion: 28/02/2022
+# Version: 2.0
 # Descripcion: construye aceras, manzana predial, manzanas, linea de edificacion y cierre
 # Owner: Raster4
 # ---------------------------------------------------------------------------
