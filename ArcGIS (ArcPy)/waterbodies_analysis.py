@@ -90,7 +90,7 @@ def analizar_elevaciones_simple(fc_poligonos_entrada, path_raster_dtm, fc_salida
                 try:
                     try:
                         raster_interno = arcpy.sa.ExtractByMask(dtm_raster, current_polygon_fc_ref)
-                        if raster_interno is not None:  # <<<< CORRECCIÓN AQUÍ
+                        if raster_interno is not None:
                             array_interno = arcpy.RasterToNumPyArray(raster_interno, nodata_to_value=np.nan)
                             mean_elev_in = np.nanmean(array_interno)
                         else:
@@ -101,7 +101,7 @@ def analizar_elevaciones_simple(fc_poligonos_entrada, path_raster_dtm, fc_salida
                         arcpy.AddWarning(f"  {feature_id_str}: Error en ExtractByMask (interno) o NumPy: {e_int}")
                         mean_elev_in = np.nan
                     finally:
-                        if raster_interno is not None:  # <<<< CORRECCIÓN AQUÍ
+                        if raster_interno is not None:
                             try:
                                 arcpy.management.Delete(raster_interno)
                             except:
@@ -123,7 +123,7 @@ def analizar_elevaciones_simple(fc_poligonos_entrada, path_raster_dtm, fc_salida
                     else:
                         try:
                             raster_anillo = arcpy.sa.ExtractByMask(dtm_raster, temp_anillo_fc)
-                            if raster_anillo is not None:  # <<<< CORRECCIÓN AQUÍ
+                            if raster_anillo is not None:
                                 array_anillo = arcpy.RasterToNumPyArray(raster_anillo, nodata_to_value=np.nan)
                                 min_elev_ring = np.nanmin(array_anillo)
                                 max_elev_ring = np.nanmax(array_anillo)
@@ -135,7 +135,7 @@ def analizar_elevaciones_simple(fc_poligonos_entrada, path_raster_dtm, fc_salida
                                 f"  {feature_id_str}: Error en ExtractByMask (anillo) o NumPy: {e_anillo_stats}")
                             min_elev_ring, max_elev_ring = np.nan, np.nan
                         finally:
-                            if raster_anillo is not None:  # <<<< CORRECCIÓN AQUÍ
+                            if raster_anillo is not None:
                                 try:
                                     arcpy.management.Delete(raster_anillo)
                                 except:
@@ -212,9 +212,9 @@ def analizar_elevaciones_simple(fc_poligonos_entrada, path_raster_dtm, fc_salida
 
 # --- Ejemplo de Uso ---
 if __name__ == '__main__':
-    fc_poligonos_entrada_main = r"D:\RASTER4\EMCO\S53W073\S53W073_DSM\Analisis\Shape Prueba\shape_prueba_2.shp"
-    path_dtm_entrada_main = r"D:\RASTER4\EMCO\S53W073\S53W073_DSM\DSM_UNIFICADO.tif"
-    fc_salida_main = r"D:\RASTER4\EMCO\S53W073\S53W073_DSM\Analisis\salida_analisis_simple_v2corr.shp"
+    fc_poligonos_entrada_main = r"archivo.shp"
+    path_dtm_entrada_main = r"archivo.tif"
+    fc_salida_main = r"archivo.shp"
 
     distancia_buffer = 20.0
     umbral_plataforma = 0.3
