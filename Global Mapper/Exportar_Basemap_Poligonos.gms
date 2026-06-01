@@ -1,13 +1,13 @@
 GLOBAL_MAPPER_SCRIPT VERSION=1.00
 
 // -----------------------------------------------------------------------
-// 1. ConfiguraciÛn de Variables
+// 1. Configuraci√≥n de Variables
 // -----------------------------------------------------------------------
-DEFINE_VAR NAME="OUT_DIR" VALUE="D:\RASTER4\Colbun\Data\Basemap\Zona_22S"
+DEFINE_VAR NAME="OUT_DIR" VALUE="RUTA CARPETA"
 
 // Ruta EXACTA del archivo que YA TIENES CARGADO en Global Mapper.
 // Se usa solo para identificar la capa, no para importarla de nuevo.
-DEFINE_VAR NAME="SHAPE_INPUT" VALUE="D:\RASTER4\Colbun\Data\SHP Zonas\SHP_Zona22.shp"
+DEFINE_VAR NAME="SHAPE_INPUT" VALUE="ruta shape.shp"
 
 // Variable de atributo (opcional)
 DEFINE_VAR NAME="ATTR_NAME" VALUE="" 
@@ -16,15 +16,15 @@ DEFINE_VAR NAME="ATTR_NAME" VALUE=""
 // 2. (PASO OMITIDO) Carga de Datos
 // -----------------------------------------------------------------------
 
-// COMENTAMOS O BORRAMOS ESTA LÕNEA PARA EVITAR DUPLICADOS:
+// COMENTAMOS O BORRAMOS ESTA L√çNEA PARA EVITAR DUPLICADOS:
 // IMPORT FILENAME="%SHAPE_INPUT%"
 
 // -----------------------------------------------------------------------
-// 3. ExportaciÛn
+// 3. Exportaci√≥n
 // -----------------------------------------------------------------------
 
-// Global Mapper buscar· en las capas abiertas una que coincida con SHAPE_INPUT
-// y usar· sus polÌgonos para recortar lo que se ve en pantalla.
+// Global Mapper buscar√° en las capas abiertas una que coincida con SHAPE_INPUT
+// y usar√° sus pol√≠gonos para recortar lo que se ve en pantalla.
 
 EXPORT_RASTER FILENAME="%OUT_DIR%_Nro.tif" TYPE=GEOTIFF \
     SPATIAL_RES=0.5,0.5 \
@@ -42,5 +42,5 @@ EXPORT_RASTER FILENAME="%OUT_DIR%_Nro.tif" TYPE=GEOTIFF \
 // -----------------------------------------------------------------------
 // Fin
 // -----------------------------------------------------------------------
-LOG_MESSAGE "ExportaciÛn finalizada sin duplicados."
+LOG_MESSAGE "Exportaci√≥n finalizada sin duplicados."
 PLAY_SOUND
