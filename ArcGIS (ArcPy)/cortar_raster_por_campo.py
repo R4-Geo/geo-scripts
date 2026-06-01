@@ -2,10 +2,10 @@ import arcpy
 import os
 
 # Entradas
-cutlines = r"D:\RASTER4\1193 SURVEY CONTROL SYSTEM\Orthoengine\vector_cutlines.shp"  # Shapefile con polígonos
+cutlines = r"cutlines.shp"  # Shapefile con polígonos
 campo_match = "ImageSourc"  # Campo que contiene el nombre del raster sin extensión
-carpeta_rasters = r"D:\RASTER4\1193 SURVEY CONTROL SYSTEM\Export_Pansharpen\Mosaicos_Trazado_Sur"  # Carpeta con los .tif originales
-carpeta_salida = r"D:\RASTER4\1193 SURVEY CONTROL SYSTEM\Export_Pansharpen\Mosaicos_Trazado_Sur\Recortados"  # Carpeta de salida
+carpeta_rasters = r"Carpeta con los tifs"  # Carpeta con los .tif originales
+carpeta_salida = r"Carpeta de Salida"  # Carpeta de salida
 
 # Asegurarse de que las extensiones estén activadas
 arcpy.CheckOutExtension("Spatial")
