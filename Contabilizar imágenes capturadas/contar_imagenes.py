@@ -91,8 +91,7 @@ def main():
     Función principal que define las rutas y ejecuta el conteo para cada plataforma.
     """
     # --- CONFIGURACIÓN DE RUTAS ---
-    # Asegúrate de que las rutas son correctas. Python usa '\\' o '/' como separador.
-    ruta_base = r"C:\RASTER4_DANIEL\SECTRA\2da ENTREGA\Scripts\Contabilizar imágenes capturadas\LOG_Vuelos_2DA_CAMPAÑA\LOG_Vuelos_2DA_CAMPAÑA"
+    ruta_base = r"Ruta Carpeta base"
     
     ruta_trinity = os.path.join(ruta_base, "TRINITY")
     ruta_mavic3 = os.path.join(ruta_base, "MAVIC_3")
