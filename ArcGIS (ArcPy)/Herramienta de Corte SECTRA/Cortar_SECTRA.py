@@ -30,7 +30,6 @@ class CorteGDBporComuna(object):
     def getParameterInfo(self):
         """Define la interfaz de usuario de la herramienta (los parámetros)"""
         params = []
-        # (Esta sección no cambia, los parámetros para el usuario son los mismos)
         param_in_source = arcpy.Parameter(
             displayName="Entrada (GDB, Carpeta con Shapefiles, o Feature Class)",
             name="in_source",
