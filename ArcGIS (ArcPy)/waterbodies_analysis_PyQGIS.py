@@ -20,13 +20,12 @@ from qgis.processing import QgsProcessingUtils
 from PyQt5.QtCore import QVariant
 
 # --- Configuración de Entradas ---
-shapefile_path = r"D:\RASTER4\EMCO\S53W073\S53W073_DSM\Analisis\Shape Prueba\shape_prueba_2.shp" # CAMBIA ESTA RUTA
-raster_path = r"D:\RASTER4\EMCO\S53W073\S53W073_DSM\DSM_UNIFICADO.tif"      # CAMBIA ESTA RUTA
+shapefile_path = r"ruta" # CAMBIAR ESTA RUTA
+raster_path = r"ruta"      # CAMBIAR ESTA RUTA
 buffer_distance = 20.0
 elevation_threshold = 0.3
 
 # --- Crear Directorio Temporal ---
-# CORRECCIÓN AQUÍ: Usar QgsProcessingUtils.tempFolder()
 temp_dir = os.path.join(QgsProcessingUtils.tempFolder(), "zonal_analysis_temp")
 if os.path.exists(temp_dir):
      shutil.rmtree(temp_dir)
@@ -148,7 +147,7 @@ else:
             mean_field_name = stats_prefix_orig + 'mean'
             try:
                 result_orig = processing.run("native:zonalstatisticsfb", {
-                    'INPUT': temp_poly_path, # INPUT AHORA ES LA RUTA AL ARCHIVO
+                    'INPUT': temp_poly_path,
                     'INPUT_RASTER': raster_layer,
                     'RASTER_BAND': 1,
                     'COLUMN_PREFIX': stats_prefix_orig,
@@ -173,7 +172,6 @@ else:
 
             except QgsProcessingException as e:
                 print(f"  Error en Zonal Statistics (original) para {feature_id}: {e}")
-                # Dejar avg_elev como None
 
             # 3. Crear Buffer (desde el GPKG temporal, salida a nuevo GPKG)
             print(f"  Creando buffer -> {os.path.basename(buffer_path)}...")
@@ -228,7 +226,7 @@ else:
                 stats_prefix_ring = 'ring_'
                 try:
                     result_ring = processing.run("native:zonalstatisticsfb", {
-                        'INPUT': ring_path, # INPUT AHORA ES LA RUTA AL ARCHIVO DEL ANILLO
+                        'INPUT': ring_path,
                         'INPUT_RASTER': raster_layer,
                         'RASTER_BAND': 1,
                         'COLUMN_PREFIX': stats_prefix_ring,
