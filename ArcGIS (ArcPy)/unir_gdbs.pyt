@@ -31,7 +31,7 @@ class UnificarGDBs(object):
         param_origen = arcpy.Parameter(
             displayName="Geodatabases de Origen",
             name="in_gdbs",
-            datatype="DEWorkspace", # Cambio de DEFolder a DEWorkspace
+            datatype="DEWorkspace", # DEWorkspace
             parameterType="Required",
             direction="Input",
             multiValue=True # Permite seleccionar múltiples GDBs
@@ -81,7 +81,7 @@ class UnificarGDBs(object):
             else:
                 messages.addWarning("La Geodatabase de salida ya existe. Se agregarán o reemplazarán contenidos.")
 
-            # --- 2. Recopilar todos los feature classes de las GDBs de origen (LÓGICA SIMPLIFICADA) ---
+            # --- 2. Recopilar todos los feature classes de las GDBs de origen ---
             messages.addMessage("Fase 1: Recopilando información de las GDBs de origen...")
             
             # Convierte el texto de las GDBs de origen a una lista, quitando comillas
