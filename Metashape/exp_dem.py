@@ -11,9 +11,9 @@ Requirements:
     - Metashape
 
 Usage:
-    1. Abre Metashape y carga un proyecto
-    2. Copia y pega el script en la ventana de consola de Metashape
-    3. Presiona Enter para ejecutar el script
+    1. Abrir Metashape y cargar un proyecto
+    2. Copiar y pegar el script en la ventana de consola de Metashape
+    3. Presionar Enter para ejecutar el script
 
 Notes:
     - El script exporta el Modelo Digital de Elevación (DEM) de cada chunk en formato TIFF
