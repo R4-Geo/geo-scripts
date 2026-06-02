@@ -2,7 +2,7 @@
 // Ejecutar después de ver el archivo en la pestaña Network
 
 (async function() {
-    console.log('🔥 Descargando grifos de Chile...');
+    console.log('Descargando grifos de Chile...');
 
     try {
         // Intentar obtener la URL del archivo desde Network
@@ -12,18 +12,18 @@
         let url;
         if (grifoURL) {
             url = grifoURL.name;
-            console.log('✅ URL encontrada:', url);
+            console.log('URL encontrada:', url);
         } else {
             // URL de respaldo (ajustar si es necesario)
             url = 'grifos_2019.json';
-            console.log('⚠️ URL no encontrada en Network, usando ruta relativa');
+            console.log('URL no encontrada en Network, usando ruta relativa');
         }
 
         // Descargar datos
         const response = await fetch(url);
         const grifos = await response.json();
 
-        console.log(`✅ Descargados ${grifos.length.toLocaleString()} grifos`);
+        console.log(`Descargados ${grifos.length.toLocaleString()} grifos`);
         console.table(grifos.slice(0, 3));
 
         // Guardar en variable global
@@ -31,14 +31,14 @@
 
         // Análisis de columnas
         const columnas = Object.keys(grifos[0]);
-        console.log('\n📊 Columnas disponibles:', columnas);
+        console.log('\nColumnas disponibles:', columnas);
 
         // Función para filtrar por comuna/ciudad
         window.filtrarPorUbicacion = function(texto) {
             const filtrados = grifos.filter(g =>
                 g.ubicacion && g.ubicacion.toLowerCase().includes(texto.toLowerCase())
             );
-            console.log(`✅ Encontrados ${filtrados.length} grifos con "${texto}"`);
+            console.log(`Encontrados ${filtrados.length} grifos con "${texto}"`);
             return filtrados;
         };
 
@@ -48,14 +48,14 @@
                 g.lat >= latMin && g.lat <= latMax &&
                 g.lng >= lngMin && g.lng <= lngMax
             );
-            console.log(`✅ Encontrados ${filtrados.length} grifos en el área`);
+            console.log(`Encontrados ${filtrados.length} grifos en el área`);
             return filtrados;
         };
 
         // Función para exportar a CSV
         window.exportarCSV = function(datos, nombreArchivo = 'grifos.csv') {
             if (!datos || datos.length === 0) {
-                console.error('❌ No hay datos para exportar');
+                console.error('No hay datos para exportar');
                 return;
             }
 
@@ -81,13 +81,13 @@
             link.click();
             document.body.removeChild(link);
 
-            console.log(`✅ CSV descargado: ${nombreArchivo} (${datos.length} registros)`);
+            console.log(`CSV descargado: ${nombreArchivo} (${datos.length} registros)`);
         };
 
         // Función para exportar a GeoJSON
         window.exportarGeoJSON = function(datos, nombreArchivo = 'grifos.geojson') {
             if (!datos || datos.length === 0) {
-                console.error('❌ No hay datos para exportar');
+                console.error('No hay datos para exportar');
                 return;
             }
 
@@ -115,7 +115,7 @@
             link.click();
             document.body.removeChild(link);
 
-            console.log(`✅ GeoJSON descargado: ${nombreArchivo} (${datos.length} features)`);
+            console.log(`GeoJSON descargado: ${nombreArchivo} (${datos.length} features)`);
         };
 
         // COORDENADAS DE LOS ÁNGELES, BÍO BÍO
@@ -127,7 +127,7 @@
             lngMax: -72.25   // Este
         };
 
-        console.log('\n🎯 FILTRANDO GRIFOS DE LOS ÁNGELES...');
+        console.log('\nFILTRANDO GRIFOS DE LOS ÁNGELES...');
         const grifosLosAngeles = filtrarPorCoordenadas(
             losAngelesBbox.latMin,
             losAngelesBbox.latMax,
@@ -136,7 +136,7 @@
         );
 
         if (grifosLosAngeles.length > 0) {
-            console.log('\n📍 Primeros 5 grifos de Los Ángeles:');
+            console.log('\nPrimeros 5 grifos de Los Ángeles:');
             console.table(grifosLosAngeles.slice(0, 5));
 
             window.grifosLosAngeles = grifosLosAngeles;
@@ -148,12 +148,12 @@
                 }
             }, 500);
         } else {
-            console.warn('⚠️ No se encontraron grifos en las coordenadas de Los Ángeles');
-            console.log('💡 Ajusta las coordenadas o usa filtrado por texto');
+            console.warn('No se encontraron grifos en las coordenadas de Los Ángeles');
+            console.log('Ajusta las coordenadas o usa filtrado por texto');
         }
 
         // Mostrar ayuda
-        console.log('\n\n📋 COMANDOS DISPONIBLES:\n');
+        console.log('\n\nCOMANDOS DISPONIBLES:\n');
         console.log('// Ver todos los grifos descargados');
         console.log('console.table(window.todosGrifos.slice(0, 10))\n');
 
@@ -179,8 +179,8 @@
         return grifosLosAngeles;
 
     } catch (error) {
-        console.error('❌ Error:', error);
-        console.log('\n💡 SOLUCIÓN MANUAL:');
+        console.error('Error:', error);
+        console.log('\nSOLUCIÓN MANUAL:');
         console.log('1. En la pestaña Network, haz clic derecho en "grifos_2019.json"');
         console.log('2. Selecciona "Copy" → "Copy response"');
         console.log('3. En la consola ejecuta:');
