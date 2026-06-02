@@ -43,7 +43,7 @@ fetch('grifos_2019.json').then(r=>r.json()).then(d=>{window.todosGrifos=d;const 
     link.download = 'grifos_los_angeles.csv';
     link.click();
 
-    console.log('✅ CSV descargado: grifos_los_angeles.csv');
+    console.log('CSV descargado: grifos_los_angeles.csv');
     console.table(grifosLosAngeles.slice(0, 5));
 })();
 
@@ -60,7 +60,7 @@ function descargarJSONCompleto() {
     a.href = URL.createObjectURL(blob);
     a.download = 'grifos_2019_completo.json';
     a.click();
-    console.log('✅ JSON completo descargado');
+    console.log('JSON completo descargado');
 }
 
 // Exportar como GeoJSON
@@ -78,7 +78,7 @@ function exportarGeoJSON(grifos, nombre = 'grifos.geojson') {
     a.href = URL.createObjectURL(blob);
     a.download = nombre;
     a.click();
-    console.log(`✅ GeoJSON descargado: ${nombre}`);
+    console.log(`GeoJSON descargado: ${nombre}`);
 }
 
 // Buscar grifos en área personalizada
@@ -128,7 +128,7 @@ window.buscarEnArea = buscarEnArea;
 window.buscarPorUbicacion = buscarPorUbicacion;
 window.analizarPorRegion = analizarPorRegion;
 
-console.log('\n📋 Funciones disponibles:');
+console.log('\nFunciones disponibles:');
 console.log('• descargarJSONCompleto()');
 console.log('• exportarGeoJSON(window.grifosLosAngeles, "nombre.geojson")');
 console.log('• buscarEnArea(latMin, latMax, lngMin, lngMax)');
