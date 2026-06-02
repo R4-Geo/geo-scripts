@@ -68,7 +68,7 @@ def set_layer_transparency(layer_handle, transparency):
 
 if __name__ == '__main__':
     # Directorio base donde se buscaran los archivos TIF (incluye subcarpetas)
-    base_directory = r"E:\050315478010_01"
+    base_directory = r"RUTA CARPETA"
     handles = load_tif_files_recursively(base_directory, load_flags=0)
     print(f"Total de handles de capas cargadas: {len(handles)}")
 
