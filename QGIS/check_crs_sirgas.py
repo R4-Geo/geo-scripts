@@ -98,9 +98,9 @@ def auditar_proyecciones(directorio_raiz, archivo_salida):
     print(f"Reporte guardado en: {archivo_salida}")
 
 # --- Ejecución ---
-# Ajusta estas rutas según tu entorno
-carpeta_a_auditar = r"E:"
-archivo_reporte = r"E:\reporte_crs.txt"
+# Ajustar estas rutas según entorno
+carpeta_a_auditar = r"C:"
+archivo_reporte = r"C:\reporte_crs.txt"
 
 if __name__ == "__main__":
     # Verifica que la carpeta exista antes de correr
