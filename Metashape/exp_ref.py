@@ -21,8 +21,8 @@ Usage:
     - Y: Coordenada Y de la referencia
     - Z: Coordenada Z de la referencia
     
-    Para utilizar este script, simplemente cópialo y pégalo en la ventana de
-    consola de Metashape y ejecútalo. El script generará un archivo de texto
+    Para utilizar este script, simplemente copiarlo y pegarlo en la ventana de
+    consola de Metashape y ejecutarlo. El script generará un archivo de texto
     con las coordenadas de referencia de las cámaras en el mismo directorio que el
     proyecto actual.
 
