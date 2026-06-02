@@ -1,3 +1,7 @@
+"""
+Este script Remueve las imágenes seleccionadas con el script "SELECT_2.py"
+"""
+
 import PhotoScan, os
 
 chunk = PhotoScan.app.document.chunk
