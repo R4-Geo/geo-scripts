@@ -31,7 +31,7 @@ Usage:
     se debe modificar la ruta de las carpetas de origen y destino.
 
 Notes:
-    - Asegúrese de tener los módulos necesarios instalados (pandas, shutil, os). y que el
+    - Asegurarse de tener los módulos necesarios instalados (pandas, shutil, os). y que el
     IDE a utilizar sea compatible con Python 3.x y lo asuma como intérprete.
     - El script asume que los archivos a copiar tienen los IDs en sus nombres.
     - Este script se puede personalizar para adaptarse a diferentes estructuras de carpetas
