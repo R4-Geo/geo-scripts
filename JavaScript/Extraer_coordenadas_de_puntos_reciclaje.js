@@ -1,3 +1,6 @@
+// Este código es para extraer los puntos de reciclaje desde un mapa embebido en un visor web
+
+
 // Código para guardar como CSV
 if (typeof markers !== 'undefined' && markers.length > 0) {
   let puntos = [];
