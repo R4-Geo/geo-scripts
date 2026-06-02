@@ -14,7 +14,7 @@ def cargar_grifos(archivo_json):
     print(f"📂 Cargando {archivo_json}...")
     with open(archivo_json, 'r', encoding='utf-8') as f:
         grifos = json.load(f)
-    print(f"✅ Cargados {len(grifos):,} grifos")
+    print(f"Cargados {len(grifos):,} grifos")
     return grifos
 
 def filtrar_por_coordenadas(grifos, lat_min, lat_max, lng_min, lng_max):
@@ -37,7 +37,7 @@ def filtrar_por_ubicacion(grifos, texto):
 def exportar_csv(grifos, archivo_salida):
     """Exporta grifos a CSV"""
     if not grifos:
-        print("❌ No hay grifos para exportar")
+        print("No hay grifos para exportar")
         return
 
     print(f"💾 Exportando a {archivo_salida}...")
@@ -50,15 +50,15 @@ def exportar_csv(grifos, archivo_salida):
         writer.writeheader()
         writer.writerows(grifos)
 
-    print(f"✅ CSV exportado: {archivo_salida} ({len(grifos):,} registros)")
+    print(f"CSV exportado: {archivo_salida} ({len(grifos):,} registros)")
 
 def exportar_geojson(grifos, archivo_salida):
     """Exporta grifos a GeoJSON"""
     if not grifos:
-        print("❌ No hay grifos para exportar")
+        print("No hay grifos para exportar")
         return
 
-    print(f"💾 Exportando a {archivo_salida}...")
+    print(f"Exportando a {archivo_salida}...")
 
     geojson = {
         "type": "FeatureCollection",
@@ -78,11 +78,11 @@ def exportar_geojson(grifos, archivo_salida):
     with open(archivo_salida, 'w', encoding='utf-8') as f:
         json.dump(geojson, f, indent=2, ensure_ascii=False)
 
-    print(f"✅ GeoJSON exportado: {archivo_salida} ({len(grifos):,} features)")
+    print(f"GeoJSON exportado: {archivo_salida} ({len(grifos):,} features)")
 
 def mostrar_estadisticas(grifos):
     """Muestra estadísticas de los grifos"""
-    print("\n📊 ESTADÍSTICAS:")
+    print("\nESTADÍSTICAS:")
     print(f"Total de grifos: {len(grifos):,}")
 
     if not grifos:
@@ -94,15 +94,15 @@ def mostrar_estadisticas(grifos):
         modelo = g.get('modelo', 'Sin modelo')
         modelos[modelo] = modelos.get(modelo, 0) + 1
 
-    print("\n📋 Grifos por modelo:")
+    print("\nGrifos por modelo:")
     for modelo, cantidad in sorted(modelos.items(), key=lambda x: x[1], reverse=True):
         print(f"  {modelo}: {cantidad:,}")
 
     # Estadísticas por año
     anios = [g.get('anio') for g in grifos if g.get('anio')]
     if anios:
-        print(f"\n📅 Año más antiguo: {min(anios)}")
-        print(f"📅 Año más reciente: {max(anios)}")
+        print(f"\nAño más antiguo: {min(anios)}")
+        print(f"Año más reciente: {max(anios)}")
 
     # Diámetros
     diametros = [g.get('diam_grifo') for g in grifos if g.get('diam_grifo')]
@@ -112,7 +112,7 @@ def mostrar_estadisticas(grifos):
 def main():
     # Verificar argumentos
     if len(sys.argv) < 2:
-        print("❌ Uso: python procesar_grifos.py <archivo_json>")
+        print("Uso: python procesar_grifos.py <archivo_json>")
         print("\nEjemplo:")
         print("  python procesar_grifos.py grifos_2019.json")
         sys.exit(1)
@@ -121,14 +121,14 @@ def main():
 
     # Verificar que existe
     if not Path(archivo_entrada).exists():
-        print(f"❌ El archivo no existe: {archivo_entrada}")
+        print(f"El archivo no existe: {archivo_entrada}")
         sys.exit(1)
 
     # Cargar datos
     grifos = cargar_grifos(archivo_entrada)
 
     # Mostrar muestra
-    print("\n📋 Primeros 3 grifos:")
+    print("\nPrimeros 3 grifos:")
     for i, g in enumerate(grifos[:3], 1):
         print(f"\n{i}. Grifo #{g.get('grifoId')}")
         for k, v in g.items():
@@ -136,7 +136,7 @@ def main():
 
     # FILTRAR LOS ÁNGELES
     print("\n" + "="*60)
-    print("🎯 FILTRANDO GRIFOS DE LOS ÁNGELES, BÍO BÍO")
+    print("FILTRANDO GRIFOS DE LOS ÁNGELES, BÍO BÍO")
     print("="*60)
 
     # Coordenadas de Los Ángeles
@@ -156,7 +156,7 @@ def main():
         LOS_ANGELES_BBOX['lng_max']
     )
 
-    print(f"✅ Encontrados {len(grifos_los_angeles):,} grifos en Los Ángeles")
+    print(f"Encontrados {len(grifos_los_angeles):,} grifos en Los Ángeles")
 
     if grifos_los_angeles:
         # Mostrar estadísticas
@@ -164,24 +164,24 @@ def main():
 
         # Exportar
         print("\n" + "="*60)
-        print("💾 EXPORTANDO DATOS")
+        print("EXPORTANDO DATOS")
         print("="*60)
 
         exportar_csv(grifos_los_angeles, 'grifos_los_angeles.csv')
         exportar_geojson(grifos_los_angeles, 'grifos_los_angeles.geojson')
 
         # También exportar todos los grifos de Chile
-        print("\n📦 ¿Quieres exportar TODOS los grifos de Chile? (79,000+)")
+        print("\n¿Quieres exportar TODOS los grifos de Chile? (79,000+)")
         respuesta = input("Escribe 'si' para exportar: ").strip().lower()
 
         if respuesta in ['si', 'sí', 's', 'yes', 'y']:
             exportar_csv(grifos, 'grifos_chile_completo.csv')
             exportar_geojson(grifos, 'grifos_chile_completo.geojson')
     else:
-        print("⚠️ No se encontraron grifos en las coordenadas especificadas")
-        print("\n💡 Intenta ajustar las coordenadas en el script")
+        print("No se encontraron grifos en las coordenadas especificadas")
+        print("\nIntenta ajustar las coordenadas en el script")
 
-    print("\n✅ Proceso completado")
+    print("\nProceso completado")
 
 if __name__ == '__main__':
     main()
