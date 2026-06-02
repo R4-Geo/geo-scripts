@@ -4,9 +4,9 @@ from pathlib import Path
 import globalmapper
 
 # Configuración inicial
-COMUNA_SHAPE = r"C:\Users\Raster4\Desktop\Scripts\Global Mapper\AOI\ARAUCO_OTA_78.shp"
-LAS_FILE = r"C:\Users\Raster4\Desktop\Scripts\Global Mapper\NP\ARAUCO_2_NP.las"
-OUTPUT_DIR = r"C:\Users\Raster4\Desktop\Scripts\Global Mapper\NP\ESQUEMA_TILE"
+COMUNA_SHAPE = r"RUTA SHAPE.shp"
+LAS_FILE = r"RUTA LAS.las"
+OUTPUT_DIR = r"RUTA CARPETA DESTINO"
 MAX_FILE_SIZE_MB = 999
 
 # Cargar archivos
