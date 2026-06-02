@@ -5,7 +5,7 @@ GLOBAL_MAPPER_SCRIPT VERSION=1.00
 // -----------------------------------------------------------------------
 DEFINE_VAR NAME="OUT_DIR" VALUE="RUTA CARPETA"
 
-// Ruta EXACTA del archivo que YA TIENES CARGADO en Global Mapper.
+// Ruta EXACTA del archivo CARGADO en Global Mapper.
 // Se usa solo para identificar la capa, no para importarla de nuevo.
 DEFINE_VAR NAME="SHAPE_INPUT" VALUE="ruta shape.shp"
 
@@ -13,7 +13,7 @@ DEFINE_VAR NAME="SHAPE_INPUT" VALUE="ruta shape.shp"
 DEFINE_VAR NAME="ATTR_NAME" VALUE="" 
 
 // -----------------------------------------------------------------------
-// 2. (PASO OMITIDO) Carga de Datos
+// 2. (Paso omitido) Carga de Datos
 // -----------------------------------------------------------------------
 
 // COMENTAMOS O BORRAMOS ESTA LÍNEA PARA EVITAR DUPLICADOS:
