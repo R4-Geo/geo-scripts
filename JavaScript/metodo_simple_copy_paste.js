@@ -1,13 +1,13 @@
-// MÉTODO SIMPLE: Para cuando ya copiaste el JSON manualmente
+// MÉTODO SIMPLE: Para cuando ya copiamos el JSON manualmente
 //
 // PASO 1: En Network, clic derecho en "grifos_2019.json" → Copy → Copy response
-// PASO 2: Ejecuta:  window.todosGrifos = [PEGA AQUÍ EL JSON]
-// PASO 3: Ejecuta este script
+// PASO 2: Ejecutar:  window.todosGrifos = [PEGAR AQUÍ EL JSON]
+// PASO 3: Ejecutar este script
 
 (function() {
     if (!window.todosGrifos) {
-        console.error('❌ Primero debes cargar los datos en window.todosGrifos');
-        console.log('\n📋 PASOS:');
+        console.error('Primero debes cargar los datos en window.todosGrifos');
+        console.log('\nPASOS:');
         console.log('1. En Network → clic derecho en "grifos_2019.json"');
         console.log('2. Copy → Copy response');
         console.log('3. En consola: window.todosGrifos = [PEGA_AQUÍ]');
@@ -15,7 +15,7 @@
         return;
     }
 
-    console.log(`✅ Cargados ${window.todosGrifos.length.toLocaleString()} grifos`);
+    console.log(`Cargados ${window.todosGrifos.length.toLocaleString()} grifos`);
 
     // Función para exportar a CSV
     function exportarCSV(datos, nombreArchivo = 'grifos.csv') {
@@ -30,7 +30,7 @@
         a.href = URL.createObjectURL(blob);
         a.download = nombreArchivo;
         a.click();
-        console.log(`✅ Descargado: ${nombreArchivo}`);
+        console.log(`Descargado: ${nombreArchivo}`);
     }
 
     // Función para exportar a GeoJSON
@@ -48,7 +48,7 @@
         a.href = URL.createObjectURL(blob);
         a.download = nombreArchivo;
         a.click();
-        console.log(`✅ Descargado: ${nombreArchivo}`);
+        console.log(`Descargado: ${nombreArchivo}`);
     }
 
     // FILTRAR LOS ÁNGELES
@@ -58,7 +58,7 @@
         g.lng >= -72.45 && g.lng <= -72.25
     );
 
-    console.log(`✅ Encontrados ${grifosLosAngeles.length} grifos en Los Ángeles`);
+    console.log(`Encontrados ${grifosLosAngeles.length} grifos en Los Ángeles`);
     console.table(grifosLosAngeles.slice(0, 5));
 
     window.grifosLosAngeles = grifosLosAngeles;
@@ -72,7 +72,7 @@
         exportarCSV(grifosLosAngeles, 'grifos_los_angeles.csv');
     }
 
-    console.log('\n📋 COMANDOS:');
+    console.log('\nCOMANDOS:');
     console.log('exportarCSV(grifosLosAngeles, "grifos_los_angeles.csv")');
     console.log('exportarGeoJSON(grifosLosAngeles, "grifos_los_angeles.geojson")');
     console.log('exportarCSV(todosGrifos, "grifos_chile_completo.csv")');
