@@ -32,6 +32,6 @@ def set_transparency_for_loaded_layers():
         display_options = gm.GetRasterDisplayOptions(layer)
 
 if __name__ == '__main__':
-    base_directory = r"D:\RASTER4\1193 SURVEY CONTROL SYSTEM\GEORREFERENCIADOS\CASALE"
+    base_directory = r"RUTA CARPETA"
     load_tif_files_recursively(base_directory, load_flags=0)
     set_transparency_for_loaded_layers()  # Llama a la funcion correctamente
