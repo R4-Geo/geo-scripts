@@ -6,14 +6,15 @@ rendimiento_trinity = 60.0 / 600.0  # 0.1 min/ha
 rendimiento_evocam = 120.0 / 1100.0 # ~0.109 min/ha
 
 # Ventana de vuelo: 10:00 am a 16:00 pm = 6 horas = 360 minutos diarios
+# Asumiendo el peor horario de invierno
 minutos_por_dia = 6.0 * 60.0
 
-# Rutas de los shapefiles
+# Rutas de los shapefiles, agregar los que sean necesarios
 shapefiles = [
-    r"C:\Users\Raster4\Downloads\R_METROPOLITANA_METROGAS\AREAS_Region_METROPOLITANA.shp",
-    r"C:\Users\Raster4\Downloads\R_VI_METROGAS\AREAS_Region_VI.shp",
-    r"C:\Users\Raster4\Downloads\R_VIII_METROGAS\AREAS_Region_VIII.shp",
-    r"C:\Users\Raster4\Downloads\R_X_METROGAS\AREAS_Region_X.shp"
+    r"RUTA SHAPE 1.shp",
+    r"RUTA SHAPE 2.shp",
+    r"RUTA SHAPE 3.shp",
+    r"RUTA SHAPE 4.shp"
 ]
 
 total_general_hectareas = 0
