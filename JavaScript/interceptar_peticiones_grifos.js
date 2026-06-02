@@ -2,8 +2,8 @@
 // Ejecutar ANTES de activar la capa "Grifos" en el visor
 
 (function() {
-    console.log('🎯 Interceptor de peticiones activado');
-    console.log('👉 Ahora activa la capa "Grifos" en el mapa\n');
+    console.log('Interceptor de peticiones activado');
+    console.log('Ahora activa la capa "Grifos" en el mapa\n');
 
     const peticionesCapturadas = [];
 
@@ -120,7 +120,7 @@
         }
 
         if (features.length > 0) {
-            console.log(`✅ Se encontraron ${features.length} features en ${source}`);
+            console.log(`Se encontraron ${features.length} features en ${source}`);
 
             // Convertir a formato simple con lat/lng
             const grifos = features.map((feature, index) => {
@@ -145,7 +145,7 @@
             });
 
             console.table(grifos.slice(0, 5)); // Mostrar primeros 5
-            console.log(`\n💾 Datos guardados en: window.grifosCapturados`);
+            console.log(`\nDatos guardados en: window.grifosCapturados`);
 
             // Guardar en variable global
             window.grifosCapturados = grifos;
@@ -165,7 +165,7 @@
     // Función para exportar a CSV
     function exportarCSV(datos) {
         if (!datos || datos.length === 0) {
-            console.error('❌ No hay datos para exportar');
+            console.error('No hay datos para exportar');
             return;
         }
 
@@ -190,13 +190,13 @@
         link.click();
         document.body.removeChild(link);
 
-        console.log(`✅ CSV descargado con ${datos.length} registros`);
+        console.log(`CSV descargado con ${datos.length} registros`);
     }
 
     // Función para exportar a GeoJSON
     function exportarGeoJSON(datos) {
         if (!datos || datos.length === 0) {
-            console.error('❌ No hay datos para exportar');
+            console.error('No hay datos para exportar');
             return;
         }
 
@@ -224,17 +224,17 @@
         link.click();
         document.body.removeChild(link);
 
-        console.log(`✅ GeoJSON descargado con ${datos.length} features`);
+        console.log(`GeoJSON descargado con ${datos.length} features`);
     }
 
     // Exponer funciones globalmente
     window.exportarCSV = exportarCSV;
     window.exportarGeoJSON = exportarGeoJSON;
 
-    console.log('\n📋 Variables globales disponibles:');
+    console.log('\nVariables globales disponibles:');
     console.log('  window.grifosCapturados    - Datos de grifos capturados');
     console.log('  window.peticionesGrifos    - Todas las peticiones interceptadas');
-    console.log('\n📋 Funciones disponibles:');
+    console.log('\nFunciones disponibles:');
     console.log('  exportarCSV(window.grifosCapturados)');
     console.log('  exportarGeoJSON(window.grifosCapturados)');
 })();
