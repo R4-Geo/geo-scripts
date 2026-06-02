@@ -1,3 +1,7 @@
+"""
+Este script selecciona las imágenes duplicadas
+"""
+
 import PhotoScan, os
 
 chunk = PhotoScan.app.document.chunk
