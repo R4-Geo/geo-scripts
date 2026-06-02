@@ -49,12 +49,12 @@ import shutil
 import pandas as pd # type: ignore
 
 # Ruta del archivo excel, carpetas de origen y destino
-destination_folder = r"F:\bloque15\MARIA PINTO\AGI_4"
-excel_file = r"C:\Users\Raster4\Downloads\TABLA_DE_INFORMACION_DE_SET_DE_IMAGENES_ZONA_4.xlsx"
+destination_folder = r"CARPETA DESTINO"
+excel_file = r"RUTA EXCEL.xlsx"
 
 source_folders = [
-    r"F:\bloque15\IMAGENES\MARIA PINTO\MARIA_PINTO_1\IMAGENES\DJI_202412021259_004_MP1",
-    r"F:\bloque15\IMAGENES\MARIA PINTO\MARIA_PINTO_1\IMAGENES\DJI_202412021321_005_MP1"
+    r"CARPETA DE ORIGEN 1",
+    r"CARPETA DE ORIGEN 2"
 ]
 
 # Leer el archivo Excel completo (original)
