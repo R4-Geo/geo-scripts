@@ -3,9 +3,9 @@ GLOBAL_MAPPER_SCRIPT VERSION=1.00
 // ===========================
 // Definir variables
 // ===========================
-DEFINE_VAR NAME="COMUNA_SHAPE" VALUE="C:\Users\Raster4\Desktop\Scripts\Global Mapper\AOI\ARAUCO_OTA_78.shp"
-DEFINE_VAR NAME="LAS_FOLDER" VALUE="C:\Users\Raster4\Desktop\Scripts\Global Mapper\NP"  // Carpeta con archivos LAS
-DEFINE_VAR NAME="OUTPUT_DIR" VALUE="C:\Users\Raster4\Desktop\Scripts\Global Mapper\NP\ESQUEMA_TILE" // Carpeta salida Tiles LAS
+DEFINE_VAR NAME="COMUNA_SHAPE" VALUE="ruta.shp"
+DEFINE_VAR NAME="LAS_FOLDER" VALUE="CARPETA CON ARCHIVOS LAS"  // Carpeta con archivos LAS
+DEFINE_VAR NAME="OUTPUT_DIR" VALUE="CARPETA CON SALIDA LAS" // Carpeta salida Tiles LAS
 DEFINE_VAR NAME="MAX_FILE_SIZE_MB" VALUE="999"
 
 // ===========================
@@ -23,13 +23,13 @@ LAYER_LOOP_START FILENAME="*" VAR_NAME_PREFIX="HIDE"
 	SET_LAYER_OPTIONS FILENAME="Buffer_5m" HIDDEN=NO
 LAYER_LOOP_END
 
-EXPORT_VECTOR FILENAME="C:\Users\Raster4\Desktop\Scripts\Global Mapper\AOI\Buffer\Split\ESQUEMA_TILE_AGI_.shp" SPLIT_BY_ATTR=YES FILENAME_ATTR="ID" TYPE=SHAPEFILE
+EXPORT_VECTOR FILENAME="RUTA SHAPE.shp" SPLIT_BY_ATTR=YES FILENAME_ATTR="ID" TYPE=SHAPEFILE
 UNLOAD_ALL
 
-IMPORT_DIR_TREE DIRECTORY="C:\Users\Raster4\Desktop\Scripts\Global Mapper\AOI\Buffer\Split" TYPE=SHAPEFILE
+IMPORT_DIR_TREE DIRECTORY="CARPETA DE IMPORTACION" TYPE=SHAPEFILE
 
 LAYER_LOOP_START
-    GENERATE_LAYER_BOUNDS FILENAME="C:\Users\Raster4\Desktop\Scripts\Global Mapper\AOI\Buffer\Split\BBOX\%LAYER_FNAME_W_DIR%"
+    GENERATE_LAYER_BOUNDS FILENAME="CARPETA DESTINO / %LAYER_FNAME_W_DIR%"
 LAYER_LOOP_END
 
 // IMPORT_DIR_TREE DIRECTORY="%LAS_FOLDER%" TYPE="LIDAR_LAS"  // Carga todos los archivos LAS de la carpeta
@@ -37,13 +37,13 @@ LAYER_LOOP_END
 // Paso 3: Asignar nombre a cada feature y crear nuevas capas según el campo "Name"
 // ===========================
 // Iterador: recorre los valores de 1 al X, asumiendo que esos son los IDs a procesar //
-// EXPORT_VECTOR FILENAME="C:\Users\Raster4\Desktop\Scripts\Global Mapper\SPLIT\%COMUNA_SHAPE%_buffer_id_%CURRENT_ID%.shp" SPLIT_BY_ATTR="ID" TYPE=SHAPE 
+// EXPORT_VECTOR FILENAME="CARPETA DESTINO/%COMUNA_SHAPE%_buffer_id_%CURRENT_ID%.shp" SPLIT_BY_ATTR="ID" TYPE=SHAPE 
 
 
 //VAR_LOOP_START VAL_START=1 VAL_STOP=7 VAL_STEP=1 VAR_NAME="CURRENT_ID"  
 
     // Exporta el feature cuyo campo ID es igual al valor actual del iterador  
- //   EXPORT_VECTOR FILENAME="C:\Users\Raster4\Desktop\Scripts\Global Mapper\SPLIT\%COMUNA_SHAPE%_buffer_id_%CURRENT_ID%.shp" SPLIT_BY_ATTR="ID" TYPE=SHAPE 
+ //   EXPORT_VECTOR FILENAME="CARPETA DESTINO/%COMUNA_SHAPE%_buffer_id_%CURRENT_ID%.shp" SPLIT_BY_ATTR="ID" TYPE=SHAPE 
 //VAR_LOOP_END
 
 // ===========================
@@ -53,8 +53,8 @@ LAYER_LOOP_END
 //VAR_LOOP_START VAL_START=1 VAL_STOP=7 VAL_STEP=1 VAR_NAME="CURRENT_ID" 
 
     // Para cada vector, genera el bounding box rectangular 
-  //  GENERATE_LAYER_BOUNDS INPUT_FILENAME="C:\Users\Raster4\Desktop\Scripts\Global Mapper\SPLIT\%COMUNA_SHAPE%_buffer_id_%CURRENT_ID%.shp"
-  //  OUTPUT_FILENAME="C:\Users\Raster4\Desktop\Scripts\Global Mapper\SPLIT\bbox\%COMUNA_SHAPE%_bbox_%CURRENT_ID%.shp" METHOD=BBOX
+  //  GENERATE_LAYER_BOUNDS INPUT_FILENAME="CARPETA ORIGEN\%COMUNA_SHAPE%_buffer_id_%CURRENT_ID%.shp"
+  //  OUTPUT_FILENAME="CARPETA DESTINO\%COMUNA_SHAPE%_bbox_%CURRENT_ID%.shp" METHOD=BBOX
 
 //VAR_LOOP_END
 
