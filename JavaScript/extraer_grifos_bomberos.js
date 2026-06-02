@@ -10,7 +10,7 @@
 
         // Buscar el mapa de Leaflet
         if (typeof L === 'undefined') {
-            console.error('❌ Leaflet no encontrado');
+            console.error('Leaflet no encontrado');
             return null;
         }
 
@@ -71,7 +71,7 @@
     // Método 3: Exportar a CSV
     function exportarCSV(datos) {
         if (!datos || datos.length === 0) {
-            console.error('❌ No hay datos para exportar');
+            console.error('No hay datos para exportar');
             return;
         }
 
@@ -101,13 +101,13 @@
         link.click();
         document.body.removeChild(link);
 
-        console.log(`✅ CSV descargado con ${datos.length} registros`);
+        console.log(`CSV descargado con ${datos.length} registros`);
     }
 
     // Método 4: Exportar a GeoJSON
     function exportarGeoJSON(datos) {
         if (!datos || datos.length === 0) {
-            console.error('❌ No hay datos para exportar');
+            console.error('No hay datos para exportar');
             return;
         }
 
@@ -135,7 +135,7 @@
         link.click();
         document.body.removeChild(link);
 
-        console.log(`✅ GeoJSON descargado con ${datos.length} features`);
+        console.log(`GeoJSON descargado con ${datos.length} features`);
     }
 
     // Ejecutar extracción
@@ -149,13 +149,13 @@
 
     // Mostrar resultados
     if (grifos && grifos.length > 0) {
-        console.log(`✅ Se encontraron ${grifos.length} grifos`);
+        console.log(`Se encontraron ${grifos.length} grifos`);
         console.table(grifos);
 
         // Guardar en variable global para acceso manual
         window.grifosExtraidos = grifos;
 
-        console.log('\n📋 Comandos disponibles:');
+        console.log('\nComandos disponibles:');
         console.log('  exportarCSV(window.grifosExtraidos)    - Descargar como CSV');
         console.log('  exportarGeoJSON(window.grifosExtraidos) - Descargar como GeoJSON');
 
@@ -166,8 +166,8 @@
 
         return grifos;
     } else {
-        console.warn('⚠️ No se encontraron grifos automáticamente.');
-        console.log('\n🔧 Opciones alternativas:');
+        console.warn('No se encontraron grifos automáticamente.');
+        console.log('\nOpciones alternativas:');
         console.log('1. Verifica que la capa "Grifos" esté activa');
         console.log('2. Revisa la pestaña Network para ver peticiones a APIs');
         console.log('3. Inspecciona manualmente: window, L.map, etc.');
