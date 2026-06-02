@@ -17,15 +17,15 @@ Requisitos:
     - Una capa de nube de puntos (.LAS, .LAZ) cargada en el proyecto.
 
 Uso:
-    1. Abre QGIS y carga tu capa de nube de puntos.
-    2. Asegúrate de que la capa de nube de puntos deseada esté SELECCIONADA
+    1. Abrir QGIS y cargar capa de nube de puntos.
+    2. Asegurarse de que la capa de nube de puntos deseada esté SELECCIONADA
        en el Panel de Capas.
-    3. Abre la Consola de Python de QGIS (Complementos -> Consola de Python).
-    4. Haz clic en el botón 'Mostrar editor' (icono de libreta).
-    5. Copia y pega este script completo en la ventana del editor.
-    6. Haz clic en el botón 'Ejecutar script' (icono de reproducción verde).
+    3. Abrir la Consola de Python de QGIS (Complementos -> Consola de Python).
+    4. Hacer clic en el botón 'Mostrar editor' (icono de libreta).
+    5. Copiar y pegar este script completo en la ventana del editor.
+    6. Hacer clic en el botón 'Ejecutar script' (icono de reproducción verde).
     7. Los resultados se imprimirán en la consola y se mostrarán en una
-       barra de mensajes en QGIS. Revisa también el panel de 'Mensajes de Registro'.
+       barra de mensajes en QGIS. Revisar también el panel de 'Mensajes de Registro'.
 
 Notas:
     - El script obtiene el recuento total de puntos directamente del proveedor
