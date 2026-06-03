@@ -6,8 +6,8 @@ import random
 class Toolbox:
     def __init__(self):
         """Define the toolbox (the name of the toolbox is the name of the .pyt file)."""
-        self.label = "Tiling SII"
-        self.alias = "tiling_sii"
+        self.label = "Tiling"
+        self.alias = "tiling"
         self.tools = [Tool]
 
 class Tool:
